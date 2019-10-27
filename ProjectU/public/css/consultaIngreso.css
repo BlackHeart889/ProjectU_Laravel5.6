@@ -1,0 +1,115 @@
+@import url(fechadesde.css);
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+button{
+    font-family: 'Poppins', sans-serif;
+}
+header {
+    display: flex;
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+    align-items: center;
+}
+.logo-container,.nav-links{
+    display: flex;
+
+}
+.logo{
+    font-weight: 400;
+    margin: 5px;
+}
+.logo-container{
+    flex: 1;
+}
+nav{
+     
+    flex: 2;
+}
+.nav-links{
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-link{
+    color: #5f5f79;
+    font-size: 16px;
+    text-decoration: none;
+}
+.intro-text h1{
+    font-size: 44px;
+    font-weight: 500;
+    background: linear-gradient(to right, #494964, #6f6f89);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', sans-serif;
+}
+.big-circle{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    opacity: 0.5;
+    height: 80%;
+}
+.medium-circle{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    z-index: -1;
+    height: 60%;
+    opacity: 0.4;
+}
+.small-circle{
+    position: absolute;
+    bottom: 0%;
+    left: 20%;
+    z-index: -1;
+}
+
+.cta-find{
+    border: 2px solid #505160;
+    background: transparent;
+    color: #505160;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 125px; 
+}
+.cta-find a{
+    text-decoration: none;
+    color: #505160;
+}
+
+.form input{
+    width: 25%;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 25px;
+                 
+    font-family: 'Poppins', sans-serif;
+}
+.form{
+    width: 170%;
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+    margin-top: 30px; 
+}
+.form .fechad{
+    margin-right: 20px;
+}
+.presentation{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    min-height: 70vh;
+    align-items: center;
+}

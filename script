@@ -1,0 +1,117 @@
+create table usuarios(
+id_usuario varchar(15) PRIMARY KEY,
+nom_usuario varchar (25),
+documento_usuario varchar(15),
+ocupacion_usuario varchar (20)
+); 
+
+create table operarios(
+	id_operario varchar (15) PRIMARY KEY,
+	nom_operario varchar (25),
+	cargo_operario varchar (20),
+	sesion_activa boolean
+);
+
+CREATE TABLE operarioslog (
+	usuario varchar(12), 
+	pass varchar (16), 
+	adm boolean, 
+	id_operario varchar(15),
+	PRIMARY KEY(usuario),
+	FOREIGN KEY(id_operario) REFERENCES operarios(id_operario)
+);
+
+CREATE TABLE usuarioslog(
+	usuario varchar(12),
+	pass varchar(16),
+	id_usuario varchar(15),
+	PRIMARY KEY(usuario),
+	FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+create table parqueaderos(
+	id_parqueadero varchar(3) PRIMARY KEY,
+	zona varchar(25),
+	cupos_TVehiculos int,
+	cupos_TMotocicletas int,
+	cupos_DVehiculos int,
+	cupos_DMotocicletas int
+);
+
+create table vehiculos(
+id_usuario varchar(15),
+placa varchar(10),
+tipo_vehiculo varchar(25),
+modelo_vehiculo varchar(60),
+color_vehiculo varchar(20),
+PRIMARY KEY(placa),
+FOREIGN KEY(id_usuario) REFERENCES Usuarios(id_usuario)
+);
+
+
+create table ingreso_usuarios(
+	id_operario varchar (15),
+	tipo_vehiculo varchar(25),
+	placa varchar (10),
+	hora time,
+	fecha date,
+	id_parqueadero varchar(3),
+	PRIMARY KEY(id_operario, placa, hora, fecha),
+	FOREIGN KEY(placa) REFERENCES Vehiculos(placa),
+	FOREIGN KEY(id_operario) REFERENCES Operarios(id_operario),
+	FOREIGN KEY(id_parqueadero) REFERENCES Parqueaderos(id_parqueadero)
+);
+
+create table salida_usuarios(
+	id_operario varchar (15),
+	tipo_vehiculo varchar(25),
+	placa varchar (10),
+	hora time ,
+	fecha date,
+	id_parqueadero varchar(3),
+	PRIMARY KEY(id_operario, placa, hora, fecha),
+	FOREIGN KEY(placa) REFERENCES Vehiculos(placa),
+	FOREIGN KEY(id_operario) REFERENCES Operarios(id_operario),
+	FOREIGN KEY(id_parqueadero) REFERENCES Parqueaderos(id_parqueadero)
+);
+
+CREATE TABLE vehiculos_visitantes(
+	placa varchar (10) PRIMARY KEY,
+	tipo_vehiculo varchar(25)
+);
+
+CREATE TABLE ingreso_visitantes (
+	id_operario varchar (10), 
+	n_visitante varchar (40),
+	id_visitante varchar (10), 
+	tipo_id varchar (30),
+	tipo_vehiculo varchar(25),
+	placa varchar (10),
+	motivo varchar (400),
+	id_parqueadero varchar(3),
+	hora time, 
+	fecha date, 
+	PRIMARY KEY (id_operario, id_visitante, placa, hora, fecha),
+	FOREIGN KEY (placa) REFERENCES vehiculos_visitantes(placa), 
+	FOREIGN KEY (id_operario) REFERENCES operarios(id_operario),
+	FOREIGN KEY (id_parqueadero) REFERENCES parqueaderos(id_parqueadero)
+);
+
+CREATE TABLE salida_visitantes(
+	id_operario varchar (15),
+	tipo_vehiculo varchar(25),
+	placa varchar (10),
+	hora time ,
+	fecha date,
+	id_parqueadero varchar(3),
+	PRIMARY KEY(id_operario, placa, hora, fecha),
+	FOREIGN KEY (placa) REFERENCES vehiculos_visitantes(placa), 
+	FOREIGN KEY(id_operario) REFERENCES Operarios(id_operario),
+	FOREIGN KEY(id_parqueadero) REFERENCES Parqueaderos(id_parqueadero)
+);
+
+INSERT INTO parqueaderos VALUES('001','Zona Administrativos',43,15,43,15);
+INSERT INTO parqueaderos VALUES('002','Zona Biblioteca',25,126,25,126);
+INSERT INTO parqueaderos VALUES('003','Zona Laboratorios',22,48,22,48);
+INSERT INTO parqueaderos VALUES('004','Zona Bloque F',18,26,18,26);
+INSERT INTO parqueaderos VALUES('005','Zona Auditorio',43,25,43,25);

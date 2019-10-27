@@ -1,0 +1,119 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+header {
+    display: flex;
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+    align-items: center;
+}
+.logo-container,.nav-links{
+    display: flex;
+
+}
+.logo{
+    font-weight: 400;
+    margin: 5px;
+}
+.logo-container{
+    flex: 1;
+}
+nav{
+     
+    flex: 2;
+}
+.nav-links{
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-link{
+    color: #5f5f79;
+    font-size: 16px;
+    text-decoration: none;
+}
+.cart{
+    flex: 1;
+    justify-content: flex-end;
+}
+.presentation {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    min-height: 40vh;
+    align-items: center;
+    border: black;
+}
+.big-circle{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    opacity: 0.5;
+    height: 80%;
+}
+.medium-circle{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    z-index: -1;
+    height: 60%;
+    opacity: 0.4;
+}
+.small-circle{
+    position: absolute;
+    bottom: 0%;
+    left: 20%;
+    z-index: -1;
+}
+.form input{
+    width: 90%;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+.cta{
+    padding: 50px 0px 0px 0px;
+    margin: auto;
+}
+.cta-find{
+    border: 2px solid #505160;
+    background: transparent;
+    color: #505160;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 50px;
+    margin-left: 130px;
+    font-family: 'Poppins', sans-serif;
+}
+.intro-text h4{
+    margin-top: 10px;
+}
+.intro-text img{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    min-height: 2vh;
+    align-items: center;
+    padding-bottom: 10px; 
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right,  #73739e, #9b9bc0);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #eee;
+}

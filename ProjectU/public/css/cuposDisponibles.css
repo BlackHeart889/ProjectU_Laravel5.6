@@ -1,0 +1,98 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+header {
+    display: flex;
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+    align-items: center;
+}
+.logo-container,.nav-links{
+    display: flex;
+
+}
+.logo{
+    font-weight: 400;
+    margin: 5px;
+}
+.logo-container{
+    flex: 1;
+}
+nav{
+    flex: 2;
+}
+.nav-links{
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-link{
+    color: #5f5f79;
+    font-size: 16px;
+    text-decoration: none;
+}
+.presentation{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    min-height: 80vh;
+    align-items: center;
+}
+.introduction{
+    flex: 1;
+}
+.intro-text h1{
+    font-size: 34px;
+    font-weight: 500;
+    background: linear-gradient(to right, #494964, #6f6f89);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.intro-text p{
+    margin-top: 5px;
+    font-size: 16px;
+    color: #585772;
+    text-align: center;
+}
+.intro-text .sec-1{
+    position: absolute;
+    margin: -270px 0 0 10%;
+}
+.intro-text .sec-1 p{
+    margin-bottom: 50px;
+}
+.intro-text .sec-2{
+    position: absolute;
+    margin: -170px 0 0 50%;
+}
+.intro-text .sec-2 p{
+    margin-bottom: 50px;
+}
+.big-circle{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    opacity: 0.5;
+    height: 80%;
+}
+.medium-circle{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    z-index: -1;
+    height: 60%;
+    opacity: 0.4;
+}
+.small-circle{
+    position: absolute;
+    bottom: 0%;
+    left: 20%;
+    z-index: -1;
+}
