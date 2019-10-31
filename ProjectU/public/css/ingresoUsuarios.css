@@ -101,24 +101,30 @@ nav{
     text-decoration: none;
     color: #505160;
 }
-.cover{
-    font-size: 35px;
-    font-weight: 500;
-    background: linear-gradient(to right, #494964, #6f6f89);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+
 .cover img{
     height: 20vh;
     margin-left: 180px;
-    
     animation: drop 1.5s ease;
 }
 .cover p{
     font-size: 20px;
+    background: linear-gradient(to right, #494964, #6f6f89);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .cover h1{
     font-size: 30px;
+    margin-top: 20px;
+    background: linear-gradient(to right, #494964, #6f6f89);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cover .sec-1{
+    margin: 50px 0 0 -200px;
+}
+.cover .sec-2{
+    margin: -310px 0 0 250px;
 }
 .big-circle{
     position: absolute;
