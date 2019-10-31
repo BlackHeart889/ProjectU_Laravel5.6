@@ -114,7 +114,12 @@ nav{
     
     animation: drop 1.5s ease;
 }
-
+.cover p{
+    font-size: 20px;
+}
+.cover h1{
+    font-size: 30px;
+}
 .big-circle{
     position: absolute;
     top: 0px;

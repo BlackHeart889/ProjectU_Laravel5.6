@@ -80,7 +80,11 @@
             </div>
             <div class="cover">
                     <img src="{{ asset('img/escudo-ucundinamarca-inferior.png') }}" alt="">
-                    <h2 class="cupo">CUPOS DISPONIBLES</h2>
+                    @php 
+                        use App\Functions\usuario\Cupos;
+                        $cupos = new Cupos();
+                        Cupos::buscar($cupos);
+                    @endphp
                 </div>
         </section>
         <img class="big-circle" src="{{ asset('img/big-circle.svg') }}" alt="">
