@@ -6,36 +6,58 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
+.nav-link button{
+    color: #edf0f1;
+    font-family: 'Poppins', sans-serif;
+    padding: 9px 25px;
+    background-color: #028041;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.nav-link button:hover{
+    
+    background-color: #006231;
+}
 header {
     display: flex;
-    width: 90%;
-    height: 10vh;
-    margin: auto;
+    justify-content: space-between;
     align-items: center;
+    padding: 15px 10%;
+    background-color: #4d4d4d;
 }
+
 .logo-container,.nav-links{
     display: flex;
-
-}
-.logo{
-    font-weight: 400;
-    margin: 5px;
 }
 .logo-container{
-    flex: 1;
+    width: 150px;
 }
-nav{
-     
-    flex: 2;
+.logo{
+    color: #edf0f1;
+    font-weight: 400;
+    margin: 5px;
+    cursor: pointer;
 }
 .nav-links{
     justify-content: space-around;
     list-style: none;
 }
 .nav-link{
-    color: #5f5f79;
+    color: #edf0f1;
     font-size: 16px;
     text-decoration: none;
+}
+.nav-links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav-links li a{
+    transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover{
+    color: #79c000;
 }
 .cart{
     flex: 1;
