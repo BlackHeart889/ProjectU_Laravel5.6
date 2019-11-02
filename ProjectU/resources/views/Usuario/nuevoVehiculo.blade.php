@@ -12,17 +12,7 @@
 
 <body>
     <header>
-        <div class="logo-container">
-            <img src="{{ asset('/img/university_30px.png') }}" alt="">
-            <h4 class="logo">Universidad De Cundinamarca</h4>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a class="nav-link" href="/usuario/CuposDisponibles">Consultar cupos</a></li>
-                <li><a class="nav-link" href="/usuario/NuevoVehiculo">Agregar vehiculo</a></li>
-                <li><a class="nav-link" href="/usuario/logout">Cerrar Sesion</a></li>
-            </ul>
-        </nav>
+        @include('shared.navbar')
     </header>
     <main>
         <div class="contenedor-formulario">

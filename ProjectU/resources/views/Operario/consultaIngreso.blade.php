@@ -19,8 +19,10 @@
             <h1>Ingrese Fecha</h1>
             <div class="form">
                 <form action="">
-                    <input type="text" placeholder="Fecha desde" class="fechad">
-                    <input type="text" placeholder="Fecha hasta" class="fechah">
+                    <label for="fechad">Fechas desde</label>
+                    <input type="date" placeholder="Fecha desde" class="fechad">
+                    <label for="fechah">Fechas hasta</label>
+                    <input type="date" placeholder="Fecha hasta" class="fechah">
                 </form>
             </div>
             <a href="#"><button class="cta-find">Consultar</button></a>
