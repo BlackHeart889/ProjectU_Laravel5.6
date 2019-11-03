@@ -21,15 +21,22 @@
                 <form action="/operario/ConsultarIngresos" method="POST" target="_blank">
                     {{ csrf_field() }}
                     <label for="fechad">Fecha desde</label>
-                    <input type="date" placeholder="Fecha desde" class="fechad" name="FechaDesde" required>
-                    <label for="fechah">Fecha hasta</label>
-                    <input type="date" placeholder="Fecha hasta" class="fechah" name="FechaHasta" required>
+                    <input type="date" placeholder="Fecha desde" class="fechad" name="FechaDesde" id="datepicker" required>
+                    <label for="fechah" class="fechahh">Fecha hasta</label>
+                    <input type="date" placeholder="Fecha hasta" class="fechah" name="FechaHasta" id="datepicker" required>
                     <div>
-                        <button class="cta-find" type="submit">Consultar</button></a>
+                        <a><button class="cta-find" type="submit">Consultar</button></a>
                     </div>
                 </form>
+                <script type="text/javascript">
+                    $(function(){
+                        $("#datepicker").datepicker({
+                            autoclose: true,
+                            todayHighlight: true
+                        }).datepicker('update', new date())  
+                    });
+                </script>
             </div>
-            
         </div>
     </section>
 </main>

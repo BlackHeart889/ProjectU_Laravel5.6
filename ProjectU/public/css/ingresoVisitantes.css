@@ -149,6 +149,17 @@ body {
   justify-content: flex-end;
   flex: 1; 
 }
+.submit-btn{
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right,  #73739e, #9b9bc0);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+}
 .big-circle{
   position: absolute;
   top: 0px;
@@ -170,16 +181,5 @@ body {
   bottom: 0%;
   left: 20%;
   z-index: -1;
-}
-.submit-btn{
-  width: 85%;
-  padding: 10px 30px;
-  cursor: pointer;
-  display: block;
-  margin: auto;
-  background: linear-gradient(to right,  #73739e, #9b9bc0);
-  border: 0;
-  outline: none;
-  border-radius: 30px;
 }
 /*# sourceMappingURL=registroV.css.map */

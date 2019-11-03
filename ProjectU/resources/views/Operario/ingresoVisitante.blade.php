@@ -17,6 +17,7 @@
             <!-- Formulario --> 
             <form action="/operario/RegistrarVisitante" class="formulario" name="formulario_visitante" method="POST">
                     <div>
+                        <h3>REGISTRO VISITANTES</h3>
                         {{ csrf_field() }}
                         <input type="hidden" name="id_operario", value="
                         @php
@@ -71,7 +72,7 @@
                                 <option value="005">Zona Auditorio</option>
                             </select>
                         </div>
-                        <input type="submit" id="btn-submit" class="submit-btn" value="entrada">
+                        <input type="submit" id="btn-submit" class="submit-btn" value="Entrada">
                     </div>    
             </form>
         </div>

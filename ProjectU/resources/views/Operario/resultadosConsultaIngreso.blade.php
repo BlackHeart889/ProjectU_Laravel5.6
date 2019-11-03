@@ -10,7 +10,6 @@
 <body>
     @php
         use App\Functions\Operario\consultaIngreso;
-
         $consulta = new consultaIngreso();
         $consulta->Consultar($_POST['FechaDesde'], $_POST['FechaHasta']);
     @endphp

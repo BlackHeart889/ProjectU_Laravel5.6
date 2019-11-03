@@ -22,7 +22,6 @@ button{
     transition: all 0.3s ease 0s;
 }
 .nav-link button:hover{
-    
     background-color: #006231;
 }
 header {
@@ -114,19 +113,33 @@ header {
     width: 25%;
     padding: 5px;
     font-size: 16px;
-    margin-bottom: 25px;
-                 
+    margin-bottom: 25px;        
     font-family: 'Poppins', sans-serif;
 }
 .form{
     width: 170%;
     position: relative;
     height: 100px;
-    overflow: hidden;
     margin-top: 30px; 
 }
-.form .fechad{
-    margin-right: 20px;
+.form button{
+    margin-left: 250px;
+    margin-top: 50px;
+    transition: all 0.6s ease 0s;
+    cursor: pointer;
+}
+.form button:hover{
+    background-color: #505160;
+    color: #eee;
+    border-radius: 45px;
+}
+#datepicker{
+    width: 180px;
+    margin: 0 30px 10px 5px;
+    border-radius: 15px;
+}
+#datepicker > span:hover{
+    cursor: pointer;
 }
 .presentation{
     display: flex;
