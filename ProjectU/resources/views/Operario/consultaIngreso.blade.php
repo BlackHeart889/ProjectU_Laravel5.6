@@ -18,14 +18,18 @@
         <div class="intro-text">
             <h1>Ingrese Fecha</h1>
             <div class="form">
-                <form action="">
-                    <label for="fechad">Fechas desde</label>
-                    <input type="date" placeholder="Fecha desde" class="fechad">
-                    <label for="fechah">Fechas hasta</label>
-                    <input type="date" placeholder="Fecha hasta" class="fechah">
+                <form action="/operario/ConsultarIngresos" method="POST" target="_blank">
+                    {{ csrf_field() }}
+                    <label for="fechad">Fecha desde</label>
+                    <input type="date" placeholder="Fecha desde" class="fechad" name="FechaDesde" required>
+                    <label for="fechah">Fecha hasta</label>
+                    <input type="date" placeholder="Fecha hasta" class="fechah" name="FechaHasta" required>
+                    <div>
+                        <button class="cta-find" type="submit">Consultar</button></a>
+                    </div>
                 </form>
             </div>
-            <a href="#"><button class="cta-find">Consultar</button></a>
+            
         </div>
     </section>
 </main>

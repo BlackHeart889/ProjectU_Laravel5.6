@@ -70,7 +70,7 @@
             <div class="cover">
                     <img src="{{ asset('img/escudo-ucundinamarca-inferior.png') }}" alt="">
                     @php 
-                        use App\Functions\usuario\Cupos;
+                        use App\Functions\Usuario\Cupos;
                         $cupos = new Cupos();
                         Cupos::buscar($cupos);
                     @endphp

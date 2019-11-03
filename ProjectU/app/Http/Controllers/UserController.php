@@ -45,7 +45,19 @@ class UserController extends Controller
 
     public function Admin()
     {
-        
+        /*$UserSession = new Sesion();
+        $usuario = $request->input('user');
+        $pass = $request->input('pass');
+
+        $Where = ['usuario' => $usuario, 'pass' => $pass];
+        $Operarioslog = Operariolog::where($Where)->get();
+        foreach ($Operarioslog as $Operariolog) {
+            if($Operariolog->adm == true){
+                $UserSession->setCurrentUser($usuario);
+                return redirect('/operario/RegistroNovedad');
+            }
+        }
+        return redirect('/operarios/login');*/
     }
 }
 

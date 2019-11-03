@@ -42,7 +42,7 @@ Route::get('/operario/ConsultarVehiculo', 'PagesController@ConsultaVehiculo');
 Route::post('/operario/ConsultarVehiculoR', 'PagesController@ConsultaVehiculoR');
 
 Route::get('/operario/ConsultarIngreso', 'PagesController@ConsultaIngreso');
-
+Route::post('/operario/ConsultarIngresos', 'PagesController@ConsultarIngresos');
 
 
 Route::get('/operario/logout', 'UserSession@OperarioLogout');

@@ -54,4 +54,8 @@ class PagesController extends Controller
     public function RegistroVisitante(){
         return view('Operario/ingresoVisitante');
     }
+
+    public function ConsultarIngresos(){
+        return view('Operario/resultadosConsultaIngreso');
+    }
 }
