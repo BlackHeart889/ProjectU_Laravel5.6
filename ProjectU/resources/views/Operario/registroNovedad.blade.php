@@ -37,8 +37,8 @@
                             echo $Operariolog->id_operario;
                         }
                         @endphp">
-                        <input type="hidden" name="hora" value="@php echo date("H:i:s"); //HH:mm:ss @endphp">
-                        <input type="hidden" name="fecha" value="@php echo date("Y-m-d"); //yyyy-mm-dd @endphp">
+                        <input type="hidden" name="hora" value="@php date_default_timezone_set('America/Bogota'); echo date("H:i:s"); //HH:mm:ss @endphp">
+                        <input type="hidden" name="fecha" value="@php echo date_default_timezone_set('America/Bogota'); date("Y-m-d"); //yyyy-mm-dd @endphp">
                         <input type="text" name="placa" autocomplete="off" required>
                         <label for="name" class="label-name">
                             <spam class="content-name">000-AAA</spam>
