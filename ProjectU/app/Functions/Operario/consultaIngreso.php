@@ -14,7 +14,7 @@ class consultaIngreso{
     public function Consultar($FechaDesde, $FechaHasta){
 
         $IngresoUsuarios = Ingresousuario::whereBetween('fecha', [$FechaDesde, $FechaHasta])->get();
-        $tabla = '<table class="egt" border="1">
+        $tabla = '<table class="egt">
                     <caption> Ingreso de Usuarios </caption>
                     <tr>
                         <th>Placa</th>
@@ -39,7 +39,7 @@ class consultaIngreso{
         $tabla.='</table><br><br>';
 
         $SalidaUsuarios = Salidausuario::whereBetween('fecha', [$FechaDesde, $FechaHasta])->get();
-        $tabla .= '<table class="egt" border="1">
+        $tabla .= '<table class="egt">
                     <caption> Salida de Usuarios </caption>
                     <tr>
                         <th>Placa</th>
@@ -65,7 +65,7 @@ class consultaIngreso{
 
 
         $IngresoVisitantes = Ingresovisitante::whereBetween('fecha', [$FechaDesde, $FechaHasta])->get();
-        $tabla .= '<table class="egt" border="1">
+        $tabla .= '<table class="egt">
                     <caption> Ingreso de Visitantes </caption>
                     <tr>
                         <th>Placa</th>
@@ -99,7 +99,7 @@ class consultaIngreso{
 
 
         $SalidaVisitantes = Salidavisitante::whereBetween('fecha', [$FechaDesde, $FechaHasta])->get();
-        $tabla .= '<table class="egt" border="1">
+        $tabla .= '<table class="egt">
                     <caption> Salida de Visitantes </caption>
                     <tr>
                         <th>Placa</th>
