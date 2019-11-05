@@ -37,18 +37,18 @@ class DatabaseController extends Controller
                         Ingresousuario::create($request->all());
                         $parqueadero->cupos_dvehiculos--;
                         $actualizaCupos = true;
-                        echo "Entrada de vehiculo";
+                        //echo "Entrada de vehiculo";
                     } else{
-                        echo "no hay cupo en la zona seleccionado";
+                        //echo "no hay cupo en la zona seleccionado";
                     }
                 } else if($request->input('tipo_vehiculo') == 'Motocicleta'){
                     if($parqueadero->cupos_dmotocicletas > 0){
                         Ingresousuario::create($request->all());
                         $parqueadero->cupos_dmotocicletas--;
                         $actualizaCupos = true;
-                        echo "Entrada de motocicleta";
+                        //echo "Entrada de motocicleta";
                     } else{
-                        echo "No hay cupo en la zona seleccionada";
+                        //echo "No hay cupo en la zona seleccionada";
                     }
                 } else if($request->input('tipo_vehiculo') == 'Bicicleta'){
                     Ingresousuario::create($request->all());
@@ -56,14 +56,30 @@ class DatabaseController extends Controller
                     $bibicleta = true; 
                 }
                 if($actualizaCupos == true){
-                    echo "cupos actualizados correctamente";
+                    //echo "cupos actualizados correctamente";
                     if($bicicleta == false){
                         $parqueadero->save();
                     }
+                    $script = '<script type="text/javascript">
+                    alert("Entrada registrada correctamente.");
+                    window.location="/operario/RegistroNovedad";
+                    </script>';
+                    echo $script;
+                } else{
+                    $script = '<script type="text/javascript">
+                    alert("No hay cupo en la zona seleccionada.");
+                    window.location="/operario/RegistroNovedad";
+                    </script>';
+                    echo $script;
                 }
 
             } catch(Exception $e){
-                echo "Vehiculo no esta registrado en la base de datos";
+                $script = '<script type="text/javascript">
+                    alert("Vehiculo no esta registrado en la base de datos.");
+                    window.location="/operario/RegistroNovedad";
+                    </script>';
+                    echo $script;
+                //echo "Vehiculo no esta registrado en la base de datos";
             }
             
         } else if($request->input('salida')){
@@ -81,9 +97,18 @@ class DatabaseController extends Controller
                 if($bicicleta == false){
                     $parqueadero->save();
                 }
-                echo "cupos actualizados correctamente";
+                $script = '<script type="text/javascript">
+                alert("Salida registrada correctamente.");
+                window.location="/operario/RegistroNovedad";
+                </script>';
+                echo $script;
             } catch(Exception $e){
-                echo "Vehiculo no esta registrado en la base de datos";
+                $script = '<script type="text/javascript">
+                alert("Vehiculo no esta registrado en la base de datos.");
+                window.location="/operario/RegistroNovedad";
+                </script>';
+                echo $script;
+                //echo "Vehiculo no esta registrado en la base de datos";
             }
         } else if($request->input('salidaVisitante')){
             try{
@@ -100,14 +125,24 @@ class DatabaseController extends Controller
                 if($bicicleta == false){
                     $parqueadero->save();
                 }
-                echo "cupos actualizados correctamente";
+                
+                $script = '<script type="text/javascript">
+                alert("Salida registrada correctamente.");
+                window.location="/operario/RegistroNovedad";
+                </script>';
+                echo $script;
             }catch(Exception $e){
-                echo "Vehiculo no esta registrado en la base de datos";
+                $script = '<script type="text/javascript">
+                alert("Vehiculo no esta registrado en la base de datos.");
+                window.location="/operario/RegistroNovedad";
+                </script>';
+                echo $script;
             }
         }
     }
 
     public function RegistrarVisitante(Request $request){
+        $bicicleta = false;
         $actualizaCupos = false;
         $parqueadero = Parqueadero::find($request->id_parqueadero);
         $vehiculoVisitante = Vehiculovisitante::find($request->placa);
@@ -120,18 +155,18 @@ class DatabaseController extends Controller
                 Ingresovisitante::create($request->all());
                 $parqueadero->cupos_dvehiculos--;
                 $actualizaCupos = true;
-                echo "Entrada de vehiculo";
+                //echo "Entrada de vehiculo";
             } else{
-                echo "no hay cupo en la zona seleccionado";
+                //echo "no hay cupo en la zona seleccionado";
             }
         } else if($request->input('tipo_vehiculo') == 'Motocicleta'){
             if($parqueadero->cupos_dmotocicletas > 0){
                 Ingresvisitante::create($request->all());
                 $parqueadero->cupos_dmotocicletas--;
                 $actualizaCupos = true;
-                echo "Entrada de motocicleta";
+                //echo "Entrada de motocicleta";
             } else{
-                echo "No hay cupo en la zona seleccionada";
+                //echo "No hay cupo en la zona seleccionada";
             }
         } else if($request->input('tipo_vehiculo') == 'Bicicleta'){
             $actualizaCupos = true;
@@ -143,7 +178,18 @@ class DatabaseController extends Controller
             if($bicicleta == false){
                 $parqueadero->save();
             }
-            return redirect('/operario/RegistroNovedad');
+            $script = '<script type="text/javascript">
+                    alert("Entrada registrada correctamente.");
+                    window.location="/operario/RegistroNovedad";
+                    </script>';
+                    echo $script;
+            //return redirect('/operario/RegistroNovedad');
+        }else{
+            $script = '<script type="text/javascript">
+                    alert("No hay cupo en la zona seleccionada.");
+                    window.location="/operario/RegistroVisitante";
+                    </script>';
+                    echo $script;
         }  
     }
 }
