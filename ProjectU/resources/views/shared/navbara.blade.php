@@ -20,4 +20,4 @@
             </a></li>
     </ul>
 </nav>
-<a class="nav-link" href="/usuario/logUsuario"><button>Cerrar sesion</button></a>
+<a class="nav-link" href="/administrador/logout"><button>Cerrar sesion</button></a>

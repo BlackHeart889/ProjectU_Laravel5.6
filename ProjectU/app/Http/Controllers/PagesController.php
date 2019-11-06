@@ -81,4 +81,16 @@ class PagesController extends Controller
     public function BuscarUsuario(){
         return view('Administrador/buscarUsuario');
     }
+
+    public function AgregarOperario(){
+        return view('Administrador/agregarOperario');
+    }
+
+    public function BuscarOperario(){
+        return view('Administrador/buscarOperario');
+    }
+
+    public function ListarOperario(){
+        return view('Administrador/listarOperarios');
+    }
 }

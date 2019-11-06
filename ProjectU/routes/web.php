@@ -56,5 +56,11 @@ Route::get('/administrador/BuscarUsuario', 'PagesController@BuscarUsuario');
 Route::post('/administrador/ComprobarUsuario', 'DatabaseController@BuscarUsuario');
 Route::post('/administrador/ModificarUsuario', 'DatabaseController@ModificarUsuario');
 
+Route::get('/administrador/agregarOperario', 'PagesController@AgregarOperario');
+
+Route::get('/administrador/BuscarOperario', 'PagesController@BuscarOperario');
+
+Route::get('/administrador/listarOperario', 'PagesController@ListarOperario');
+
 
 Route::get('/administrador/logout', 'UserSession@OperarioLogout');
