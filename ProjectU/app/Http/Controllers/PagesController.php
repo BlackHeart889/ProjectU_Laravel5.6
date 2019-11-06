@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Functions\Sesion;
 use App\Applogin;
 use App\Operariolog;
+use App\Usuariolog;
 
 class PagesController extends Controller
 {
@@ -14,7 +15,12 @@ class PagesController extends Controller
     public function Usuario(){
         $UserSession = new Sesion();
         if(isset($_SESSION['user'])){
+            $Where = ['usuario' => $_SESSION['user']];
+            $Usuarioslog = Usuariolog::where($Where)->get();
+        foreach ($Usuarioslog as $Usuariolog) {
             return redirect('/usuario/CuposDisponibles');
+        }
+            $UserSession->closeSession();
         }
         return view('Usuario/logUsuario');
     }
@@ -44,6 +50,7 @@ class PagesController extends Controller
                     return redirect('/operario/RegistroNovedad');
                 }
             }
+            $UserSession->closeSession();
         }
         return view('Operario/logOperario');
     }

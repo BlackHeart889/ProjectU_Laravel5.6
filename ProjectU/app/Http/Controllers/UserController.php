@@ -56,7 +56,7 @@ class UserController extends Controller
         foreach ($Operarioslog as $Operariolog) {
             if($Operariolog->adm == $adm){
                 $UserSession->setCurrentUser($usuario);
-                return redirect('/administrador/AgregarUsuario');
+                return redirect('/administrador/agregarUsuario');
             } else{
                 $alerta = "No tiene los permisos suficientes para acceder.";
                 return view('Operario/logOperario')->with('alerta', $alerta);
