@@ -29,10 +29,10 @@
                 <button type="submit" class="submit-btn">Iniciar</button>
                 
             </form>
-            <form id="admin" action="" class="input-group" method="POST">
+            <form id="admin" action="/administrador/VerificarLogin" class="input-group" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="text" class="input-field" placeholder="Usuario" id="user" name="user" autocomplete="none" required>
-                    <input type="password" class="input-field" placeholder="contraseña" id="password" name="password" required>
+                    <input type="text" class="input-field" placeholder="Usuario" id="user" name="user_adm" autocomplete="none" required>
+                    <input type="password" class="input-field" placeholder="contraseña" id="password" name="pass_adm" required>
                     <input type="checkbox" class="check-box"><span>Recordar contraseña</span>
                     <button type="submit" class="submit-btn">Iniciar</button>
             </form>

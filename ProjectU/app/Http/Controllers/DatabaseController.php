@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Usuariolog;
+use App\Operariolog;
 use App\Vehiculo;
 use App\Ingresousuario;
 use App\Salidausuario;
@@ -191,5 +192,37 @@ class DatabaseController extends Controller
                     </script>';
                     echo $script;
         }  
+    }
+
+    public function BuscarUsuario(Request $request){
+        $usuario = $request->input('user');
+        $Where = ['usuario' => $usuario];
+        $Operarioslog = Operariolog::where($Where)->get();
+        foreach ($Operarioslog as $Operariolog) {
+            return view('Administrador/modificarUsuario')->with('user',$usuario)
+                                                        ->with('pass', $Operariolog->pass)
+                                                        ->with('id_operario', $Operariolog->id_operario);
+        }
+    }
+
+    public function ModificarUsuario(Request $request){
+        $operario = Operariolog::find($request->input('user'));
+        $operario->pass = $request->input('pass');
+        $operario->id_operario = $request->input('id_operario');
+
+        try {
+            $operario->save();
+            $script = '<script type="text/javascript">
+                    alert("Usuario modificado correctamente.");
+                    window.location="/administrador/BuscarUsuario";
+                    </script>';
+                    echo $script;
+        }catch(\Exception $e) {
+            $script = '<script type="text/javascript">
+                    alert("El id ingresado no se encuentra registrado en la base de datos.");
+                    window.location="/administrador/BuscarUsuario";
+                    </script>';
+                    echo $script;
+        }
     }
 }

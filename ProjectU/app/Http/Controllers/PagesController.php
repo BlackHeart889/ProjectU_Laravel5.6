@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Functions\Sesion;
+use App\Applogin;
+use App\Operariolog;
 
 class PagesController extends Controller
 {
@@ -30,7 +32,18 @@ class PagesController extends Controller
     public function Operario(){
         $UserSession = new Sesion();
         if(isset($_SESSION['user'])){
-            return redirect('/operario/RegistroNovedad');
+            
+            $usuario = $_SESSION['user'];
+            $adm = true;
+            $Where = ['usuario' => $usuario];
+            $Operarioslog = Operariolog::where($Where)->get();
+            foreach ($Operarioslog as $Operariolog) {
+                if($Operariolog->adm == $adm){
+                    return redirect('/administrador/AgregarUsuario');
+                } else{
+                    return redirect('/operario/RegistroNovedad');
+                }
+            }
         }
         return view('Operario/logOperario');
     }
@@ -57,5 +70,15 @@ class PagesController extends Controller
 
     public function ConsultarIngresos(){
         return view('Operario/resultadosConsultaIngreso');
+    }
+
+
+    //Administrador
+    public function AgregarUsuario(){
+        return view('Administrador/agregarUsuario');
+    }
+
+    public function BuscarUsuario(){
+        return view('Administrador/buscarUsuario');
     }
 }

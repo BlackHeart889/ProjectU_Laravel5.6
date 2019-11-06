@@ -115,3 +115,7 @@ INSERT INTO parqueaderos VALUES('002','Zona Biblioteca',25,126,25,126);
 INSERT INTO parqueaderos VALUES('003','Zona Laboratorios',22,48,22,48);
 INSERT INTO parqueaderos VALUES('004','Zona Bloque F',18,26,18,26);
 INSERT INTO parqueaderos VALUES('005','Zona Auditorio',43,25,43,25);
+
+
+INSERT INTO operarios VALUES ('1007782988', 'Kevin Baquero', 'Operario', true);
+INSERT INTO operarioslog VALUES ('operario1', '1234', false, '1007782988');

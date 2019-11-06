@@ -25,7 +25,11 @@ class UserController extends Controller
             $UserSession->setCurrentUser($usuario);
             return redirect('/usuario/CuposDisponibles');
         }
-        return redirect('/usuarios/login');
+        $script = '<script type="text/javascript">
+                    alert("Error de usuario o contraseña, por favor verifique.");
+                    window.location="/operarios/login";
+                    </script>';
+                    echo $script;
     }
 
     public function Operario(Request $request)
@@ -40,24 +44,38 @@ class UserController extends Controller
             $UserSession->setCurrentUser($usuario);
             return redirect('/operario/RegistroNovedad');
         }
-        return redirect('/operarios/login');
+        $script = '<script type="text/javascript">
+                    alert("Error de usuario o contraseña, por favor verifique.");
+                    window.location="/operarios/login";
+                    </script>';
+                    echo $script;
     }
 
-    public function Admin()
+    public function Administrador(Request $request)
     {
-        /*$UserSession = new Sesion();
-        $usuario = $request->input('user');
-        $pass = $request->input('pass');
-
+        $UserSession = new Sesion();
+        $usuario = $request->input('user_adm');
+        $pass = $request->input('pass_adm');
+        $adm = true;
         $Where = ['usuario' => $usuario, 'pass' => $pass];
         $Operarioslog = Operariolog::where($Where)->get();
         foreach ($Operarioslog as $Operariolog) {
-            if($Operariolog->adm == true){
+            if($Operariolog->adm == $adm){
                 $UserSession->setCurrentUser($usuario);
-                return redirect('/operario/RegistroNovedad');
+                return redirect('/administrador/AgregarUsuario');
+            } else{
+                $script = '<script type="text/javascript">
+                    alert("No tiene los permisos suficientes para acceder.");
+                    window.location="/operarios/login";
+                    </script>';
+                    echo $script;
             }
         }
-        return redirect('/operarios/login');*/
+        $script = '<script type="text/javascript">
+                    alert("Error de usuario o contraseña, por favor verifique.");
+                    window.location="/operarios/login";
+                    </script>';
+                    echo $script;
     }
 }
 

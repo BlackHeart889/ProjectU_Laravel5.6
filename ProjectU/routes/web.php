@@ -46,3 +46,15 @@ Route::post('/operario/ConsultarIngresos', 'PagesController@ConsultarIngresos');
 
 
 Route::get('/operario/logout', 'UserSession@OperarioLogout');
+
+//Administrador
+Route::post('/administrador/VerificarLogin', 'UserController@Administrador');
+
+Route::get('/administrador/AgregarUsuario', 'PagesController@AgregarUsuario');
+
+Route::get('/administrador/BuscarUsuario', 'PagesController@BuscarUsuario');
+Route::post('/administrador/ComprobarUsuario', 'DatabaseController@BuscarUsuario');
+Route::post('/administrador/ModificarUsuario', 'DatabaseController@ModificarUsuario');
+
+
+Route::get('/administrador/logout', 'UserSession@OperarioLogout');

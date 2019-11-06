@@ -18,8 +18,4 @@ class UserSession extends Controller
         $UserSession->closeSession();
         return redirect('/operarios/login');
     }
-
-    public function AdminLogout(){
-
-    }
 }
