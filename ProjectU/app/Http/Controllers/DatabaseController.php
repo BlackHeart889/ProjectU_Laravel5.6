@@ -20,10 +20,12 @@ class DatabaseController extends Controller
         
         try{
             Vehiculo::create($request->all()) ;
-            echo "vehiculo registrado correctamente";
+            $alerta = "Vehiculo registrado correctamente.";
+            return view('Usuario/nuevoVehiculo')->with('alerta', $alerta);
+            //echo "vehiculo registrado correctamente";
         }catch(\Exception $e){
-            
-            return redirect('/usuario/NuevoVehiculo'); 
+            $alerta = "El vehiculo ya se encuentra registrado.";
+            return view('Usuario/nuevoVehiculo')->with('alerta', $alerta);
         }
     }
 
@@ -61,25 +63,17 @@ class DatabaseController extends Controller
                     if($bicicleta == false){
                         $parqueadero->save();
                     }
-                    $script = '<script type="text/javascript">
-                    alert("Entrada registrada correctamente.");
-                    window.location="/operario/RegistroNovedad";
-                    </script>';
-                    echo $script;
+                    $alerta = "Entrada registrada correctamente.";
+                    return view('Operario/registroNovedad')->with('alerta', $alerta);
                 } else{
-                    $script = '<script type="text/javascript">
-                    alert("No hay cupo en la zona seleccionada.");
-                    window.location="/operario/RegistroNovedad";
-                    </script>';
-                    echo $script;
+                    $alerta = "No hay cupo en la zona seleccionada.";
+                    return view('Operario/registroNovedad')->with('alerta', $alerta);
                 }
 
-            } catch(Exception $e){
-                $script = '<script type="text/javascript">
-                    alert("Vehiculo no esta registrado en la base de datos.");
-                    window.location="/operario/RegistroNovedad";
-                    </script>';
-                    echo $script;
+            } catch(\Exception $e){
+                $alerta = "Vehiculo no registrado en la base de datos.";
+                
+                return view('Operario/registroNovedad')->with('alerta', $alerta);
                 //echo "Vehiculo no esta registrado en la base de datos";
             }
             
@@ -98,17 +92,11 @@ class DatabaseController extends Controller
                 if($bicicleta == false){
                     $parqueadero->save();
                 }
-                $script = '<script type="text/javascript">
-                alert("Salida registrada correctamente.");
-                window.location="/operario/RegistroNovedad";
-                </script>';
-                echo $script;
-            } catch(Exception $e){
-                $script = '<script type="text/javascript">
-                alert("Vehiculo no esta registrado en la base de datos.");
-                window.location="/operario/RegistroNovedad";
-                </script>';
-                echo $script;
+                $alerta = "Salida registrada correctamente.";
+                return view('Operario/registroNovedad')->with('alerta', $alerta);
+            } catch(\Exception $e){
+                $alerta = "Vehiculo no registrado en la base de datos.";
+                return view('Operario/registroNovedad')->with('alerta', $alerta);
                 //echo "Vehiculo no esta registrado en la base de datos";
             }
         } else if($request->input('salidaVisitante')){
@@ -127,17 +115,11 @@ class DatabaseController extends Controller
                     $parqueadero->save();
                 }
                 
-                $script = '<script type="text/javascript">
-                alert("Salida registrada correctamente.");
-                window.location="/operario/RegistroNovedad";
-                </script>';
-                echo $script;
-            }catch(Exception $e){
-                $script = '<script type="text/javascript">
-                alert("Vehiculo no esta registrado en la base de datos.");
-                window.location="/operario/RegistroNovedad";
-                </script>';
-                echo $script;
+                $alerta = "Salida de visitante registrada correctamente.";
+                return view('Operario/registroNovedad')->with('alerta', $alerta);
+            }catch(\Exception $e){
+                $alerta = "Vehiculo no registrado en la base de datos.";
+                return view('Operario/registroNovedad')->with('alerta', $alerta);
             }
         }
     }
@@ -179,18 +161,12 @@ class DatabaseController extends Controller
             if($bicicleta == false){
                 $parqueadero->save();
             }
-            $script = '<script type="text/javascript">
-                    alert("Entrada registrada correctamente.");
-                    window.location="/operario/RegistroNovedad";
-                    </script>';
-                    echo $script;
+            $alerta = "Entrada de visitante registrada correctamente.";
+            return view('Operario/registroNovedad')->with('alerta', $alerta);
             //return redirect('/operario/RegistroNovedad');
         }else{
-            $script = '<script type="text/javascript">
-                    alert("No hay cupo en la zona seleccionada.");
-                    window.location="/operario/RegistroVisitante";
-                    </script>';
-                    echo $script;
+            $alerta = "No hay cupo en la zona seleccionada.";
+            return view('Operario/registroNovedad')->with('alerta', $alerta);
         }  
     }
 
@@ -212,11 +188,8 @@ class DatabaseController extends Controller
 
         try {
             $operario->save();
-            $script = '<script type="text/javascript">
-                    alert("Usuario modificado correctamente.");
-                    window.location="/administrador/BuscarUsuario";
-                    </script>';
-                    echo $script;
+            $alerta = "Usuario modificado correctamente.";
+            return view('Administrador/buscarUsuario')->with('alerta', $alerta);
         }catch(\Exception $e) {
             $script = '<script type="text/javascript">
                     alert("El id ingresado no se encuentra registrado en la base de datos.");

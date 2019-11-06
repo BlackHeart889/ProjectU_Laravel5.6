@@ -82,4 +82,13 @@
     </main>
 </body>
 
+@php
+    if(isset($alerta)){
+        $script = '<script type="text/javascript">
+                alert("'.$alerta.'");
+                </script>';
+        echo $script;
+        unset($alerta);
+    }
+@endphp
 </html>

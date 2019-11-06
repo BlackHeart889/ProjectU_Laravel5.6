@@ -25,11 +25,8 @@ class UserController extends Controller
             $UserSession->setCurrentUser($usuario);
             return redirect('/usuario/CuposDisponibles');
         }
-        $script = '<script type="text/javascript">
-                    alert("Error de usuario o contraseña, por favor verifique.");
-                    window.location="/operarios/login";
-                    </script>';
-                    echo $script;
+        $alerta = "Error de usuario o contraseña.";
+        return view('Operario/logUsuario')->with('alerta', $alerta);
     }
 
     public function Operario(Request $request)
@@ -44,11 +41,8 @@ class UserController extends Controller
             $UserSession->setCurrentUser($usuario);
             return redirect('/operario/RegistroNovedad');
         }
-        $script = '<script type="text/javascript">
-                    alert("Error de usuario o contraseña, por favor verifique.");
-                    window.location="/operarios/login";
-                    </script>';
-                    echo $script;
+        $alerta = "Error de usuario o contraseña.";
+        return view('Operario/logOperario')->with('alerta', $alerta);
     }
 
     public function Administrador(Request $request)
@@ -64,18 +58,12 @@ class UserController extends Controller
                 $UserSession->setCurrentUser($usuario);
                 return redirect('/administrador/AgregarUsuario');
             } else{
-                $script = '<script type="text/javascript">
-                    alert("No tiene los permisos suficientes para acceder.");
-                    window.location="/operarios/login";
-                    </script>';
-                    echo $script;
+                $alerta = "No tiene los permisos suficientes para acceder.";
+                return view('Operario/logOperario')->with('alerta', $alerta);
             }
         }
-        $script = '<script type="text/javascript">
-                    alert("Error de usuario o contraseña, por favor verifique.");
-                    window.location="/operarios/login";
-                    </script>';
-                    echo $script;
+        $alerta = "Error de usuario o contraseña.";
+        return view('Operario/logOperario')->with('alerta', $alerta);
     }
 }
 
