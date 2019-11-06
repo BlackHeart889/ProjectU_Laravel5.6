@@ -3,7 +3,7 @@
 </div>
 <nav>
     <ul class="nav-links">
-        <li><a class="nav-link" href="/administrador/AgregarUsuario">
+        <li><a class="nav-link" href="/administrador/agregarUsuario">
                 <p align="center">Crear<br>Usuario</p>
             </a></li>
         <li><a class="nav-link" href="/administrador/BuscarUsuario">

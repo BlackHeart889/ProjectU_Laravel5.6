@@ -18,10 +18,10 @@
         <section class="presentation">
             <div class="introduction">
                 <div class="intro-text">
-                    <form action="/administrador/ComprobarUsuario" method="POST">
+                    <form action="/administrador/ComprobarOperario" method="POST">
                         {{ csrf_field() }}
                         <label for="finduser">Buscar operario</label>
-                        <input type="text" placeholder="Id. Operario" name="user">
+                        <input type="text" placeholder="Id. Operario" name="id_operario">
                         <input type="submit" id="btn-submit" class="submit-btn" value="Buscar">
                     </form> 
                 </div>

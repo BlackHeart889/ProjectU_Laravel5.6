@@ -15,6 +15,15 @@
         @include('shared.navbara')
     </header>
     <main>
+        <section class="presentation">
+            <div class="introduction">
+                @php
+                use App\Functions\Administrador\listarOperarios;
+                $listar = new listarOperarios();
+                $listar->Listar();
+                @endphp
+            </div>
+        </section>
             <img class="big-circle" src="{{ asset('img/big-circle.svg') }}" alt="">
             <img class="medium-circle" src="{{ asset('img/mid-circle.svg') }}" alt="">
             <img class="small-circle" src="{{ asset('img/small-circle.svg') }}" alt="">

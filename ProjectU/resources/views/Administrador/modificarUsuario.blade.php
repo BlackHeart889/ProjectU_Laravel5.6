@@ -25,15 +25,15 @@
                         </div>
                         <div class="input-group">
                             <label class="label" for="nombre">Cuenta usuario</label>
-                            <input type="text" id="user" name="user" placeholder="Usuario" value=@php echo $user; @endphp readonly>
+                            <input type="text" id="user" name="user" placeholder="Usuario" value="@php echo $user; @endphp" readonly>
                         </div>
                         <div class="input-group">
                             <label class="label" for="placa">Contraseña</label>
-                            <input type="password" id="pass" name="pass" placeholder="Contraseña" value=@php echo $pass; @endphp required>
+                            <input type="password" id="pass" name="pass" placeholder="Contraseña" value="@php echo $pass; @endphp" required>
                         </div>
                         <div class="input-group">
                             <label for="">Número de documento</label>
-                            <input type="text" id="id_operario" name="id_operario" placeholder="0000000000" value=@php echo $id_operario; @endphp required>
+                            <input type="text" id="id_operario" name="id_operario" placeholder="0000000000" value="@php echo $id_operario; @endphp" required>
                         </div>
                         <input type="submit" id="btn-submit" class="submit-btn" value="Modificar">
                     </div>

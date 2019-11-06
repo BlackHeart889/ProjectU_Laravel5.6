@@ -17,27 +17,35 @@
     <main>
         <div class="contenedor-formulario">
             <div class="wrap">
-                <form action="php/visitantes.php" class="formulario" name="formulario_visitante" method="POST">
+                <form action="/administrador/ModificarOperario" class="formulario" name="formulario_visitante" method="POST">
+                    {{ csrf_field() }}
                     <div>
                         <h1>MODIFICAR OPERARIO</h1>
                         <div class="input-group">
                             <label class="label" for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Usuario" required>
+                            <input type="text" id="nombre" name="nom_operario" placeholder="Usuario" value="@php echo "$nom_operario";@endphp" required>
                         </div>
                         <div class="input-group">
                             <label for="">Número de documneto</label>
-                            <input type="text" id="numerod" placeholder="0000000000">
+                            <input type="text" id="numerod" name="id_operario" placeholder="0000000000" value="@php echo $id_operario;@endphp" required readonly>
                         </div>
                         <div class="input-group">
                             <label class="label" for="cargo">Cargo</label>
-                            <input type="text" id="cargo" name="cargo" placeholder="Cargo" required>
+                            <input type="text" id="cargo" name="cargo_operario" placeholder="Cargo" value="@php echo $cargo_operario;@endphp" required>
                         </div>
                         <div class="input-group">
                             <label class="label" for="identificacion">¿Activo?</label>
                             <div class="input-group-select">
-                                <select name="tipoID">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
+                                <select name="sesion_activa">
+                                    @php
+                                        if($sesion_activa == true){
+                                            echo '<option value="true" selected>Si</option>
+                                                  <option value="false">No</option>';
+                                        } else{
+                                            echo '<option value="true">Si</option>
+                                                  <option value="false" selected>No</option>';
+                                        }
+                                    @endphp
                                 </select>
                             </div>
                         </div>

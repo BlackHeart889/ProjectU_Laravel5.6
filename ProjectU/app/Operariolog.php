@@ -8,7 +8,7 @@ class Operariolog extends Model
 {
     protected $table = 'operarioslog';
 
-    protected $fillable = ['pass', 'id_operario'];
+    protected $fillable = ['usuario','pass', 'id_operario'];
     protected $primaryKey = 'usuario';
     public $incrementing = false;
     protected $keyType = 'string';
