@@ -3,8 +3,21 @@
 </div>
 <nav>
     <ul class="nav-links">
-        <li><a class="nav-link" href="/usuario/CuposDisponibles">Cupos Disponibles</a></li>
-        <li><a class="nav-link" href="/usuario/NuevoVehiculo">Agregar vehiculo</a></li>
+        <li><a class="nav-link" href="/administrador/AgregarUsuario">
+                <p align="center">Crear<br>Usuario</p>
+            </a></li>
+        <li><a class="nav-link" href="/administrador/BuscarUsuario">
+                <p align="center">Modificar<br>Usuario</p>
+            </a></li>
+        <li><a class="nav-link" href="/administrador/agregarOperario">
+                <p align="center">Agregar<br>Operario</p>
+            </a></li>
+        <li><a class="nav-link" href="/administrador/BuscarOperario">
+                <p align="center">Modificar<br>Operario</p>
+            </a></li>
+        <li><a class="nav-link" href="/administrador/listarOperario">
+                <p align="center">Listar<br>Operarios</p>
+            </a></li>
     </ul>
 </nav>
 <a class="nav-link" href="/usuario/logUsuario"><button>Cerrar sesion</button></a>

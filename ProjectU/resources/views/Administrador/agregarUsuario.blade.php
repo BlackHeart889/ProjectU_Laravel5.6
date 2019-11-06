@@ -12,21 +12,7 @@
 
 <body>
     <header>
-        <div class="logo-container">
-            <img src="{{ asset('img/university_30px.png') }}" alt="universidad">
-            <h4 class="logo">Universidad De Cundinamarca</h4>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a class="nav-link" href="/administrador/AgregarUsuario"> <p align="center">Crear<br>Usuario</p> </a></li>
-                <li><a class="nav-link" href="/administrador/BuscarUsuario"> <p align="center">Modificar<br>Usuario</p> </a></li>
-                <li><a class="nav-link" href="consultac.html"> <p align="center">Listar<br>Usuarios</p> </a></li>
-                <li><a class="nav-link" href="consultac.html"> <p align="center">Agregar<br>Operario</p> </a></li>
-                <li><a class="nav-link" href="consultaV.php"> <p align="center">Modificar<br>Operario</p> </a></li>
-                <li><a class="nav-link" href="consultaV.php"> <p align="center">Listar<br>Operarios</p> </a></li>
-                <li><a class="nav-link" href="/administrador/logout">Cerrar Sesion</a></li>
-            </ul>
-        </nav>
+        @include('shared.navbara')
     </header>
     <main>
         <div class="contenedor-formulario">
@@ -50,10 +36,6 @@
                                     <option value="Motocicleta">Administrador</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="input-group">
-                            <label for="">Nombre completo</label>
-                            <input type="text" id="colorv" name="colorv" placeholder="Nombre y Apellidos">
                         </div>
                         <div class="input-group">
                             <label for="">Número de documneto</label>

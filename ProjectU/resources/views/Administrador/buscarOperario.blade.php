@@ -20,7 +20,7 @@
                 <div class="intro-text">
                     <form action="/administrador/ComprobarUsuario" method="POST">
                         {{ csrf_field() }}
-                        <label for="finduser">Buscar usuario</label>
+                        <label for="finduser">Buscar usuario operario</label>
                         <input type="text" placeholder="Usuario" name="user">
                         <input type="submit" id="btn-submit" class="submit-btn" value="Buscar">
                     </form> 
