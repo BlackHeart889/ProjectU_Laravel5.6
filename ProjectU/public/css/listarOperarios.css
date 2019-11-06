@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.nav-link button{
+    color: #edf0f1;
+    font-family: 'Poppins', sans-serif;
+    padding: 9px 25px;
+    background-color: #028041;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.nav-link button:hover{
+    
+    background-color: #006231;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background-color: #4d4d4d;
+}
+
+.logo-container,.nav-links{
+    display: flex;
+}
+.logo-container{
+    width: 150px;
+}
+.logo{
+    color: #edf0f1;
+    font-weight: 400;
+    margin: 5px;
+    cursor: pointer;
+}
+.nav-links{
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-link{
+    color: #edf0f1;
+    font-size: 16px;
+    text-decoration: none;
+}
+.nav-links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav-links li a{
+    transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover{
+    color: #79c000;
+}
+
+
+
+
+.big-circle{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    opacity: 0.5;
+    height: 80%;
+}
+.medium-circle{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    z-index: -1;
+    height: 60%;
+    opacity: 0.4;
+}
+.small-circle{
+    position: absolute;
+    bottom: 0%;
+    left: 20%;
+    z-index: -1;
+}
