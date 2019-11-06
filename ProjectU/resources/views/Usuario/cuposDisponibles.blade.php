@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        @include('shared.navbar')
+        @include('shared.navbaru')
     </header>
     <main>
         <section class="presentation">
