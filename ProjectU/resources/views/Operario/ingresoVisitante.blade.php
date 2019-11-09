@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,21 @@
     <link rel="stylesheet" href="{!! asset('css/ingresoVisitantes.css') !!}">
     <title>Registro Visitantes</title>
 </head>
+
 <body>
     <header>
         @include('shared.navbar')
     </header>
-    <div class="contenedor-formulario">
-        <div class="wrap">
-            <!-- Formulario --> 
-            <form action="/operario/RegistrarVisitante" class="formulario" name="formulario_visitante" method="POST">
+    <main>
+        <div class="contenedor-formulario">
+            <div class="wrap">
+                <!-- Formulario -->
+                <form action="/operario/RegistrarVisitante" class="formulario" name="formulario_visitante"
+                    method="POST">
                     <div>
                         <h3>REGISTRO VISITANTES</h3>
                         {{ csrf_field() }}
-                        <input type="hidden" name="id_operario", value="
+                        <input type="hidden" name="id_operario" , value="
                         @php
                         use App\Operariolog;
                         use App\Functions\Sesion;
@@ -31,8 +35,10 @@
                             echo $Operariolog->id_operario;
                         }
                         @endphp">
-                        <input type="hidden" name="hora" value="@php date_default_timezone_set('America/Bogota'); echo date("H:i:s"); //HH:mm:ss @endphp">
-                        <input type="hidden" name="fecha" value="@php echo date("Y-m-d"); //yyyy-mm-dd @endphp">
+                        <input type="hidden" name="hora"
+                            value="@php date_default_timezone_set('America/Bogota'); echo date(" H:i:s"); //HH:mm:ss
+                            @endphp">
+                        <input type="hidden" name="fecha" value="@php echo date(" Y-m-d"); //yyyy-mm-dd @endphp">
 
                         <div class="input-group">
                             <input type="text" id="nombre" name="n_visitante" required>
@@ -73,14 +79,22 @@
                             </select>
                         </div>
                         <input type="submit" id="btn-submit" class="submit-btn" value="Entrada">
-                    </div>    
-            </form>
+                    </div>
+                </form>
+            </div>
+            <div class="cover">
+                    @php
+                    use App\Functions\Usuario\Cupos;
+                    $cupos = new Cupos();
+                    Cupos::buscar($cupos);
+                    @endphp
+                </div>
+            <img class="big-circle" src="{{ asset('img/big-circle.svg') }}" alt="">
+            <img class="medium-circle" src="{{ asset('img/mid-circle.svg') }}" alt="">
+            <img class="small-circle" src="{{ asset('img/small-circle.svg') }}" alt="">
         </div>
-        <img class="big-circle" src="{{ asset('img/big-circle.svg') }}" alt="">
-        <img class="medium-circle" src="{{ asset('img/mid-circle.svg') }}" alt="">
-        <img class="small-circle" src="{{ asset('img/small-circle.svg') }}" alt="">
-    </div>
-
-    <script src="js/formulario.js"></script>
+        <script src="js/formulario.js"></script>
+    </main>
 </body>
+
 </html>
