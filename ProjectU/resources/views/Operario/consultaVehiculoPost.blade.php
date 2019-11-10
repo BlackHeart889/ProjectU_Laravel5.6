@@ -21,12 +21,11 @@
                     <div class="form">
                         <form action="/operario/ConsultarVehiculoR" method="POST">
                             {{csrf_field()}}
-                            @php 
+                            @php
                             use App\Functions\Operario\consultarVehiculoForm;
                             $consultar = new consultarVehiculoForm();
                             consultarVehiculoForm::buscar($_POST['placa'],$consultar);
-                            @endphp 
-
+                            @endphp
                     </div>
                 </div>
             </div>

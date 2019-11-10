@@ -100,6 +100,28 @@ header {
     margin-bottom: 25px;
     font-family: 'Poppins', sans-serif;
 }
+.form{
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    margin: 50px 5%;
+    box-shadow: 0px 0px 3px grey; 
+    background: #eee;
+}
+.form input[type="text"] {
+    font-family: "Poppins", Arial;
+    font-size: 16px;
+    color: #000000;
+    width: 100%;
+    outline: none;
+    padding: 12px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #5f5f79; 
+    margin-top: 15px;
+    
+  }
+
 .cta{
     padding: 50px 0px 0px 0px;
     margin: auto;

@@ -42,7 +42,7 @@
                         <div class="input-group">
                             <label class="label" for="identificacion">Tipo de vehiculo</label>
                             <div class="input-group-select">
-                                <select name="tipo_vehiculo">
+                                <select name="tipo_vehiculo" required>
                                     <option value="Automovil">Automóvil</option>
                                     <option value="Motocicleta">Motocicleta</option>
                                     <option value="Bicicleta">Bicicleta</option>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="input-group">
                             <label for="">Color vehiculo</label>
-                            <input type="text" id="color_vehiculo" name="color_vehiculo" placeholder="Ingrese color del vehciulo">
+                            <input type="text" id="color_vehiculo" name="color_vehiculo" placeholder="Ingrese color del vehciulo" required>
                         </div>
                         <input type="submit" id="btn-submit" class="submit-btn" value="Registrar">
                     </div>
