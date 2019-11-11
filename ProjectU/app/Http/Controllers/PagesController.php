@@ -37,6 +37,9 @@ class PagesController extends Controller
         return view('Usuario/buscarVehiculo');
     }
 
+    public function ListarVehiculos(){
+        return view ('Usuario/listarVehiculos');
+    }
 
     //Operario
     public function Operario(){
