@@ -26,6 +26,10 @@ Route::get('/usuario/CuposDisponibles', 'PagesController@CuposDisponibles');
 Route::get('/usuario/NuevoVehiculo', 'PagesController@NuevoVehiculo');
 Route::post('/usuario/InsertarNuevoVehiculo', 'DatabaseController@NuevoVehiculo');
 
+Route::get('/usuario/BuscarVehiculo', 'PagesController@BuscarVehiculo');
+Route::post('/usuario/ComprobarVehiculo', 'DatabaseController@BuscarVehiculo');
+Route::post('/usuario/EliminarVehiculo', 'DatabaseController@EliminarVehiculo');
+
 Route::get('/usuario/logout', 'UserSession@UsuarioLogout');
 
 

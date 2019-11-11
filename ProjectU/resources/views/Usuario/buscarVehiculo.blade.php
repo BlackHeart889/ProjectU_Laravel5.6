@@ -18,10 +18,22 @@
         <section class="presentation">
             <div class="introduction">
                 <div class="intro-text">
-                    <form action="/usuario/eliminarVehiculo" method="POST">
+                    <form action="/usuario/ComprobarVehiculo" method="POST">
                         {{ csrf_field() }}
+                        <input type="hidden" name="id_usuario", value="
+                        @php
+                        use App\Usuariolog;
+                        use App\Functions\Sesion;
+                        $UserSession = new Sesion();
+                        $usuario = $UserSession->getCurrentUser();
+                        $Where = ['usuario' => $usuario];
+                        $Usuarioslog = Usuariolog::where($Where)->get();
+                        foreach ($Usuarioslog as $Usuariolog ) {
+                            echo $Usuariolog->id_usuario;
+                        }
+                        @endphp" </input>
                         <label for="finduser">Buscar vehiculo</label>
-                        <input type="text" placeholder="Placa Vehiculo" name="id_operario">
+                        <input type="text" placeholder="Placa Vehiculo" name="placa">
                         <input type="submit" id="btn-submit" class="submit-btn" value="Buscar">
                     </form> 
                 </div>
@@ -32,4 +44,14 @@
         <img class="small-circle" src="{{ asset('img/small-circle.svg') }}" alt="">
     </main>
 </body>
+
+@php
+    if(isset($alerta)){
+        $script = '<script type="text/javascript">
+                alert("'.$alerta.'");
+                </script>';
+        echo $script;
+        unset($alerta);
+    }
+@endphp
 </html>

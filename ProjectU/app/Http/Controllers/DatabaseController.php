@@ -17,6 +17,7 @@ use App\Functions\Sesion;
 
 class DatabaseController extends Controller
 {
+    //Usuario
     public function NuevoVehiculo(Request $request){
         
         try{
@@ -30,6 +31,35 @@ class DatabaseController extends Controller
         }
     }
 
+    public function BuscarVehiculo(Request $request){
+        $id_usuario = $request->input('id_usuario');
+        $placa = $request->input('placa');
+        $Where = ['placa' => $placa, 'id_usuario' => $id_usuario];
+        $Vehiculos = Vehiculo::where($Where)->get();
+        foreach ($Vehiculos as $Vehiculo) {
+            return view('Usuario/eliminarVehiculo')->with('placa',$Vehiculo->placa)
+                                                        ->with('tipo_vehiculo', $Vehiculo->tipo_vehiculo)
+                                                        ->with('modelo_vehiculo', $Vehiculo->modelo_vehiculo)
+                                                        ->with('color_vehiculo', $Vehiculo->color_vehiculo);
+        }
+        $alerta = "El vehiculo no se encuentra registrado en la base de datos.";
+        return view('Usuario/buscarVehiculo')->with('alerta', $alerta);
+    }
+
+    public function EliminarVehiculo(Request $request){
+        try{
+            $vehiculo = Vehiculo::find($request->input('placa'));
+            $vehiculo->delete();
+            $alerta = "Vehiculo eliminado correctamente.";
+            return view ('Usuario/buscarVehiculo')->with('alerta', $alerta);
+        }catch(\Exception $e){
+            $alerta = "Error al eliminar el vehiculo";
+            return view ('Usuario/buscarVehiculo')->with('alerta', $alerta);
+        }
+        
+    }
+
+    //Operario
     public function RegistrarNovedad(Request $request){
         $actualizaCupos = false;
         $bicicleta = false;
@@ -171,6 +201,8 @@ class DatabaseController extends Controller
         }  
     }
 
+
+    //Administrador
     public function AgregarUsuario(Request $request){
         try {
             $Where = ['id_operario' => $request->input('id_operario')];

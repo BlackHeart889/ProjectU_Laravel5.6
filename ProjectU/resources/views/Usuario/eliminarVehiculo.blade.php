@@ -18,24 +18,29 @@
             <div class="cta">
                 <div class="intro-text">
                     <div class="form">
-                        <form action="/operario/ConsultarVehiculoR" method="POST">
-                            <label for="placa">Placa Vehículo:</label>
-                            <input type="text" id="placa" name="placa" placeholder="000-AAA"
-                                value="'.$Informacion['placa'].'" required>
-                            <section id="typev">
-                                <h4>Tipo de vehiculo:</h4>
-                                <output id="tipov">'.$Informacion['tipo'].'</output>
-                            </section>
-                            <section id="modelv">
-                                <h4>Modelo del vehiculo:</h4>
-                                <output id="modelv">'.$Informacion['modelo'].'</output>
-                            </section>
-                            <section class="colorv">
-                                <h4>Color del vehiculo:</h4>
-                                <output id="colorv">'.$Informacion['color'].'</output>
-                            </section>
-                            <input type="submit" id="bnt-submit" class="submit-btn" value="Eliminar">
-                        </form>';
+                        <form action="/usuario/EliminarVehiculo" method="POST">
+                            {{ csrf_field() }}
+                            
+                            <input type="hidden" name="placa" value="@php echo $placa; @endphp">
+                                <section id="placa">
+                                        <h4>Placa del vehiculo:</h4>
+                                        <output id="placa">@php echo $placa; @endphp</output>
+                                    </section>
+                                    <section id="typev">
+                                        <h4>Tipo de vehiculo:</h4>
+                                        <output id="tipov">@php echo $tipo_vehiculo; @endphp</output>
+                                    </section>
+                                    <section id="modelv">
+                                        <h4>Modelo del vehiculo:</h4>
+                                        <output id="modelv">@php echo $modelo_vehiculo; @endphp</output>
+                                    </section>
+                                    <section class="colorv">
+                                        <h4>Color del vehiculo:</h4>
+                                        <output id="colorv">@php echo $color_vehiculo; @endphp</output>
+                                    </section>
+                                    <a href="/usuario/BuscarVehiculo"><button class="submit-btn" type="button">Volver</button></a>
+                                    <button class="submit-btn" type="submit">Eliminar</button>
+                        </form>
                     </div>
                 </div>
             </div>
