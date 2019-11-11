@@ -16,7 +16,7 @@
     height: 480px;   
     position: relative;
     margin: 6% auto;
-    background: #fff;
+    background: linear-gradient(to right,  rgb(255, 255, 255), rgb(187, 187, 187));
     padding: 5px;
     overflow: hidden;
     border-radius: 10px;

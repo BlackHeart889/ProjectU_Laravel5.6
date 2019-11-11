@@ -67,7 +67,7 @@ header {
     padding: 40px;
     margin: auto;
     box-shadow: 0px 0px 3px grey; 
-    background: #eee; 
+    background: linear-gradient(to right,  #eee, rgb(216, 215, 215));  
 }
 .contenedor-formulario {
     width: 100%;

@@ -16,7 +16,7 @@ body {
   padding: 40px;
   margin: 50px 20%;
   box-shadow: 0px 0px 3px grey; 
-  background: #eee; 
+  background: linear-gradient(to right,  #eee, rgb(216, 215, 215));
 }
 
 .cover{
@@ -174,7 +174,12 @@ body {
   background: linear-gradient(to right,  #73739e, #9b9bc0);
   border: 0;
   outline: none;
-  border-radius: 30px;
+  border-radius: 10px;
+  transition: 0.2 ease;
+}
+.submit-btn:hover{
+  border-radius: 22px;
+  color: white;
 }
 .big-circle{
   position: absolute;
