@@ -17,7 +17,22 @@
     <main>
         <section class="presentation">
             <div class="introduction">
-               
+                @php
+
+                use App\Usuariolog;
+                use App\Functions\Sesion;
+                use App\Functions\Usuario\listarVehiculos;
+
+                $UserSession = new Sesion();
+                $usuario = $UserSession->getCurrentUser();
+                $Where = ['usuario' => $usuario];
+                $Usuarioslog = Usuariolog::where($Where)->get();
+                $id_usuario;
+                foreach ($Usuarioslog as $Usuariolog ) {
+                    $lista = new listarVehiculos();
+                    $lista->Listar($Usuariolog->id_usuario);
+                }
+                @endphp
             </div>
         </section>
             <img class="big-circle" src="{{ asset('img/big-circle.svg') }}" alt="">

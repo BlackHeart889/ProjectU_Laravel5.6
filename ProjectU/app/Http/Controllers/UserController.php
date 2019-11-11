@@ -26,7 +26,7 @@ class UserController extends Controller
             return redirect('/usuario/CuposDisponibles');
         }
         $alerta = "Error de usuario o contraseña.";
-        return view('Operario/logUsuario')->with('alerta', $alerta);
+        return view('Usuario/logUsuario')->with('alerta', $alerta);
     }
 
     public function Operario(Request $request)

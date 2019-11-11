@@ -38,6 +38,7 @@ class PagesController extends Controller
     }
 
     public function ListarVehiculos(){
+        
         return view ('Usuario/listarVehiculos');
     }
 
