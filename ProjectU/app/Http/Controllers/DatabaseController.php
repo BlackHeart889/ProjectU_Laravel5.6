@@ -177,8 +177,8 @@ class DatabaseController extends Controller
             }
         }
 
-        $alerta = "Vehiculo no registrado en la base de datos.";
-        return view('Operario/registroNovedad')->with('alerta', $alerta);
+        /*$alerta = "Vehiculo no registrado en la base de datos.";
+        return view('Operario/registroNovedad')->with('alerta', $alerta);*/
     }
 
     public function RegistrarVisitante(Request $request){

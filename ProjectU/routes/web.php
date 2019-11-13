@@ -42,7 +42,7 @@ Route::post('/operario/VerificarLogin', 'UserController@Operario');
 Route::get('/operario/RegistroNovedad','PagesController@RegistroNovedad');
 Route::post('/operario/RegistrarNovedad', 'DatabaseController@RegistrarNovedad');
 Route::get('/operario/RegistroVisitante', 'PagesController@RegistroVisitante');
-Route::post('operario/RegistrarVisitante', 'DatabaseController@RegistrarNovedad');
+Route::post('operario/RegistrarVisitante', 'DatabaseController@RegistrarVisitante');
 
 Route::get('/operario/ConsultarVehiculo', 'PagesController@ConsultaVehiculo');
 Route::post('/operario/ConsultarVehiculoR', 'PagesController@ConsultaVehiculoR');
