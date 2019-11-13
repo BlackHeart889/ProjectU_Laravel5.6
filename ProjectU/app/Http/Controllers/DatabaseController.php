@@ -145,7 +145,7 @@ class DatabaseController extends Controller
             try{
                 $Where = ['placa' => $request->input('placa')];
                 $VehiculosVisitantes = Vehiculovisitante::where($Where)->get();
-                foreach ($VehiculosVisitantes as $VehiculoVistante ) {
+                foreach ($VehiculosVisitantes as $VehiculoVisitante ) {
                     if($VehiculoVisitante->tipo_vehiculo == $request->input('tipo_vehiculo')){
                         Salidavisitante::create($request->all());
                         $parqueadero = Parqueadero::find($request->id_parqueadero);
@@ -161,16 +161,16 @@ class DatabaseController extends Controller
                             $parqueadero->save();
                         }
                         
-                        $alerta = "La placa no corresponde al tipo de vehiculo.";
+                        $alerta = "Salida visitante registrada correctamente.";
                         return view('Operario/registroNovedad')->with('alerta', $alerta);
                     } else{
-                        $alerta = "Vehiculo no registrado en la base de datos.";
+                        $alerta = "La placa no corresponde al tipo de vehiculo.";
                         return view('Operario/registroNovedad')->with('alerta', $alerta);
                     }
                 }
                 
             }catch(\Exception $e){
-                $alerta = "Vehiculo no registrado en la base de datos.";
+                $alerta = "El vehiculo no se encuentra registrado en la base de datos.";
                 return view('Operario/registroNovedad')->with('alerta', $alerta);
             }
         }
