@@ -72,7 +72,6 @@ class DatabaseController extends Controller
                         $parqueadero = Parqueadero::find($request->id_parqueadero);
                         if($request->input('tipo_vehiculo') == 'Automovil'){
                             if($parqueadero->cupos_dvehiculos > 0){
-                                $Where = []
                                 Ingresousuario::create($request->all());
                                 $parqueadero->cupos_dvehiculos--;
                                 $actualizaCupos = true;
