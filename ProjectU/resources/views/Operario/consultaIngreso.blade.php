@@ -16,8 +16,8 @@
 <main>
     <section class="presentation">
         <div class="intro-text">
-            <h1>Ingrese Fecha</h1>
             <div class="form">
+            <h1>Ingrese Fecha</h1>
                 <form action="/operario/ConsultarIngresos" method="POST" target="_blank">
                     {{ csrf_field() }}
                     <label for="fechad">Fecha desde</label>

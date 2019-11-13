@@ -17,10 +17,10 @@
         <div class="menu">
             <ul>
                 <li class="logo"><img src="{{ asset('img/logo-nuevo-70.png') }}" alt="universidad"></li>
-                <li><a class="active" href="#">Inicio</a></li>
+                <li><a class="active" href="/Home/inicio">Inicio</a></li>
                 <li><a href="/usuarios/login">Estudiantes</a></li>
                 <li><a href="/operarios/login">Operario</a></li>
-                <li><a class="contact-bnt" href=""><span>Contacto</span></a></li>
+                <li><a class="contact-bnt" href="/Home/contact"><span>Contacto</span></a></li>
             </ul>
         </div>
         <div class="banner">

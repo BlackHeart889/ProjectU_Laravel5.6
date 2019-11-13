@@ -41,6 +41,12 @@ class PagesController extends Controller
         
         return view ('Usuario/listarVehiculos');
     }
+    public function Contact(){
+        return view ('Home/contact');
+    }
+    public function Inicio(){
+        return view('Home/inicio');
+    }
 
     //Operario
     public function Operario(){

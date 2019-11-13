@@ -12,6 +12,9 @@
 
 <body>
     <div class="hero">
+        <div class="btn-ini">
+            <a href="/Home/inicio"><button class="ini-btn">Home</button></a>
+        </div>
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
@@ -23,18 +26,20 @@
             </div>
             <form id="operador" action="/operario/VerificarLogin" class="input-group" method="POST">
                 {{ csrf_field() }}
-                <input type="text" class="input-field" placeholder="Usuario" id="user" name="user" autocomplete="none" required>
+                <input type="text" class="input-field" placeholder="Usuario" id="user" name="user" autocomplete="none"
+                    required>
                 <input type="password" class="input-field" placeholder="contraseña" id="pass" name="pass" required>
                 <input type="checkbox" class="check-box"><span>Recordar contraseña</span>
                 <button type="submit" class="submit-btn">Iniciar</button>
-                
             </form>
             <form id="admin" action="/administrador/VerificarLogin" class="input-group" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="text" class="input-field" placeholder="Usuario" id="user" name="user_adm" autocomplete="none" required>
-                    <input type="password" class="input-field" placeholder="contraseña" id="password" name="pass_adm" required>
-                    <input type="checkbox" class="check-box"><span>Recordar contraseña</span>
-                    <button type="submit" class="submit-btn">Iniciar</button>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="text" class="input-field" placeholder="Usuario" id="user" name="user_adm"
+                    autocomplete="none" required>
+                <input type="password" class="input-field" placeholder="contraseña" id="password" name="pass_adm"
+                    required>
+                <input type="checkbox" class="check-box"><span>Recordar contraseña</span>
+                <button type="submit" class="submit-btn">Iniciar</button>
             </form>
         </div>
     </div>
@@ -42,12 +47,12 @@
         var x = document.getElementById("operador");
         var y = document.getElementById("admin");
         var z = document.getElementById("btn");
-        function admin(){
+        function admin() {
             x.style.left = "-400px";
             y.style.left = "50px";
             z.style.left = "110px";
         }
-        function operador(){
+        function operador() {
             x.style.left = "50px";
             y.style.left = "450px";
             z.style.left = "0px";
@@ -55,12 +60,14 @@
     </script>
 </body>
 @php
-    if(isset($alerta)){
-        $script = '<script type="text/javascript">
-                alert("'.$alerta.'");
-                </script>';
-        echo $script;
-        unset($alerta);
-    }
+if(isset($alerta)){
+$script = '
+<script type="text/javascript">
+    alert("'.$alerta.'");
+</script>';
+echo $script;
+unset($alerta);
+}
 @endphp
+
 </html>

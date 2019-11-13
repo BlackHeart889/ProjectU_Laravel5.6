@@ -18,7 +18,6 @@
         <section class="presentation">
             <div class="introduction">
                 @php
-
                 use App\Usuariolog;
                 use App\Functions\Sesion;
                 use App\Functions\Usuario\listarVehiculos;

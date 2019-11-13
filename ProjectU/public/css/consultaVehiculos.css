@@ -124,18 +124,7 @@ header {
     padding: 50px 0px 0px 0px;
     margin: auto;
 }
-.cta-find{
-    border: 2px solid #505160;
-    background: transparent;
-    color: #505160;
-    width: 150px;
-    height: 50px;
-    cursor: pointer;
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: 130px;
-    font-family: 'Poppins', sans-serif;
-}
+
 .intro-text h4{
     margin-top: 10px;
 }
@@ -154,8 +143,13 @@ header {
     display: block;
     margin: auto;
     background: linear-gradient(to right,  #73739e, #9b9bc0);
-    border: 0;
     outline: none;
     border-radius: 30px;
     color: #eee;
+    transition: all 0.2s linear;
+}
+.submit-btn:hover{
+    color: white;
+    border-radius: 15px;
+    background: linear-gradient(to right,  #8181b1, #ababd3);
 }

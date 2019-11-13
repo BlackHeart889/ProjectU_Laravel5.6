@@ -102,6 +102,12 @@ header {
     height: 50px;
     cursor: pointer;
     font-size: 15px;
+    transition: all 0.2s linear;
+}
+.cta-find:hover{
+    border-radius: 8px;
+    background: #505160;
+    color: white;
 }
 .cta-register{
     background: #505160;
@@ -110,8 +116,14 @@ header {
     cursor: pointer;
     font-size: 15px;
     border: none;
-    color: white;
+    color: #eee;
     margin: 30px 0px 0px 30px;
+    transition: all 0.2s linear;
+}
+.cta-register:hover{
+    color: white;
+    background: #606174;
+    border-radius: 8px;
 }
 .cta-register a{
     text-decoration: none;

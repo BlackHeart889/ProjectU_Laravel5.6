@@ -103,11 +103,10 @@ header {
     align-items: center;
 }
 .introduction{
-    flex: 2;
-    margin-left: 300px;
+    width: 50%;
+    text-align: center;
+    margin: 20px auto;
 }
-
-
 .big-circle{
     position: absolute;
     top: 0px;

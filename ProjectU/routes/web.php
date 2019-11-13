@@ -20,7 +20,6 @@ Route::get('/', function () {
 //Usuario
 Route::get('/usuarios/login', 'PagesController@Usuario');
 Route::post('/usuario/VerificarLogin', 'UserController@Usuario');
-
 Route::get('/usuario/CuposDisponibles', 'PagesController@CuposDisponibles');
 
 Route::get('/usuario/NuevoVehiculo', 'PagesController@NuevoVehiculo');
@@ -34,6 +33,9 @@ Route::get('/usuario/ListarVehiculos', 'PagesController@ListarVehiculos');
 
 Route::get('/usuario/logout', 'UserSession@UsuarioLogout');
 
+//Home
+Route::get('/Home/contact','PagesController@Contact');
+Route::get('/Home/inicio','PagesController@Inicio');
 
 //Operario
 Route::get('/operarios/login', 'PagesController@Operario');

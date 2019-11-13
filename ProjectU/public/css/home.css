@@ -43,9 +43,13 @@ body{
     color: #fff;
     border: 2px solid transparent;
     border-radius: 20px;
-    background-image: linear-gradient(#6f6f89,#6f6f89), radial-gradient(circle at top left, #494964, #494964);
+    background-image: linear-gradient(#6f6f89,#6f6f89), radial-gradient(circle at top left, #6f6f89, #6f6f89);
     background-origin: border-box;
     background-clip: content-box,border-box;
+    transition: all 0.3s linear;
+}
+.contact-bnt:hover{
+    border-radius: 10px;
 }
 .contact-bnt span{
     color: white;

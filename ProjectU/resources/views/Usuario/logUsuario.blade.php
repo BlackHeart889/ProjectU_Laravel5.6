@@ -12,6 +12,9 @@
 
 <body>
     <div class="hero">
+        <div class="btn-ini">
+            <a href="/Home/inicio"><button class="ini-btn">Home</button></a>
+        </div>
         <div class="form-box">
             <div class="logo">
                 <img src="{{ asset('img/escudo_udec.png') }}" alt="">
@@ -27,12 +30,14 @@
     </div>
 </body>
 @php
-    if(isset($alerta)){
-        $script = '<script type="text/javascript">
-                alert("'.$alerta.'");
-                </script>';
-        echo $script;
-        unset($alerta);
-    }
+if(isset($alerta)){
+$script = '
+<script type="text/javascript">
+    alert("'.$alerta.'");
+</script>';
+echo $script;
+unset($alerta);
+}
 @endphp
+
 </html>

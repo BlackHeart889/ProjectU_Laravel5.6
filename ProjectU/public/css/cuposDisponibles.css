@@ -68,7 +68,8 @@ header {
     align-items: center;
 }
 .introduction{
-    flex: 1;
+    text-align: center;
+    margin: auto 20px;
 }
 .intro-text h1{
     font-size: 34px;
