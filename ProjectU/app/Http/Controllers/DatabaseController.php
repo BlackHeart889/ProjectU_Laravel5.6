@@ -168,7 +168,8 @@ class DatabaseController extends Controller
                         return view('Operario/registroNovedad')->with('alerta', $alerta);
                     }
                 }
-                
+                $alerta = "El vehiculo no se encuentra registrado en la base de datos.";
+                return view('Operario/registroNovedad')->with('alerta', $alerta);
             }catch(\Exception $e){
                 $alerta = "El vehiculo no se encuentra registrado en la base de datos.";
                 return view('Operario/registroNovedad')->with('alerta', $alerta);
