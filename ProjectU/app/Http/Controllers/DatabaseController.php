@@ -134,6 +134,7 @@ class DatabaseController extends Controller
                         return view('Operario/registroNovedad')->with('alerta', $alerta);
                         //echo "Vehiculo no esta registrado en la base de datos";
                     }
+                    
                 } 
             } else{
                 $alerta = "La placa no corresponde al tipo de vehiculo.";
@@ -175,6 +176,9 @@ class DatabaseController extends Controller
                 return view('Operario/registroNovedad')->with('alerta', $alerta);
             }
         }
+
+        $alerta = "Vehiculo no registrado en la base de datos.";
+        return view('Operario/registroNovedad')->with('alerta', $alerta);
     }
 
     public function RegistrarVisitante(Request $request){
