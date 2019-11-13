@@ -134,8 +134,19 @@ class DatabaseController extends Controller
                         return view('Operario/registroNovedad')->with('alerta', $alerta);
                         //echo "Vehiculo no esta registrado en la base de datos";
                     }
-                } else if($request->input('salidaVisitante')){
-                    try{
+                } 
+            } else{
+                $alerta = "La placa no corresponde al tipo de vehiculo.";
+                return view('Operario/registroNovedad')->with('alerta', $alerta);
+            }
+        }
+
+        if($request->input('salidaVisitante')){
+            try{
+                $Where = ['placa' => $request->input('placa')];
+                $VehiculosVisitantes = Vehiculovisitante::where($Where)->get();
+                foreach ($VehiculosVisitantes as $VehiculoVistante ) {
+                    if($VehiculoVisitante->tipo_vehiculo == $request->input('tipo_vehiculo')){
                         Salidavisitante::create($request->all());
                         $parqueadero = Parqueadero::find($request->id_parqueadero);
                         if($request->input('tipo_vehiculo') == 'Automovil'){
@@ -150,19 +161,19 @@ class DatabaseController extends Controller
                             $parqueadero->save();
                         }
                         
-                        $alerta = "Salida de visitante registrada correctamente.";
+                        $alerta = "La placa no corresponde al tipo de vehiculo.";
                         return view('Operario/registroNovedad')->with('alerta', $alerta);
-                    }catch(\Exception $e){
+                    } else{
                         $alerta = "Vehiculo no registrado en la base de datos.";
                         return view('Operario/registroNovedad')->with('alerta', $alerta);
                     }
                 }
-            } else{
-                $alerta = "La placa no corresponde al tipo de vehiculo.";
+                
+            }catch(\Exception $e){
+                $alerta = "Vehiculo no registrado en la base de datos.";
                 return view('Operario/registroNovedad')->with('alerta', $alerta);
             }
         }
-        
     }
 
     public function RegistrarVisitante(Request $request){
