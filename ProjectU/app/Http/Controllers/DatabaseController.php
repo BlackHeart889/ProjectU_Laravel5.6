@@ -161,7 +161,7 @@ class DatabaseController extends Controller
                         if($bicicleta == false){
                             $parqueadero->save();
                         }
-                        
+                        $actualizaCupos = true;
                         $alerta = "Salida visitante registrada correctamente.";
                         return view('Operario/registroNovedad')->with('alerta', $alerta);
                     } else{
@@ -177,8 +177,12 @@ class DatabaseController extends Controller
             }
         }
 
-        /*$alerta = "Vehiculo no registrado en la base de datos.";
-        return view('Operario/registroNovedad')->with('alerta', $alerta);*/
+        if($actualizaCupos == false){
+            $alerta = "Vehiculo no registrado en la base de datos.";
+            return view('Operario/registroNovedad')->with('alerta', $alerta);
+        }
+
+        
     }
 
     public function RegistrarVisitante(Request $request){
